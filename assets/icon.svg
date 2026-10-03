@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Frontend Skill Builder">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B6E55"/>
+      <stop offset="1" stop-color="#10A37F"/>
+    </linearGradient>
+  </defs>
+  <rect x="15" y="15" width="482" height="482" rx="112" fill="url(#tile)"/>
+  <path d="M120 82h251a25 25 0 0 1 25 25v49L309 243V107H145a25 25 0 0 0-25 25z" fill="#FFFFFF"/>
+  <path d="M396 156v276a25 25 0 0 1-25 25H145a25 25 0 0 1-25-25V107c0 0 0 0 0 0v49L309 243h87z" fill="#FFFFFF" opacity="0"/>
+  <path d="M120 82h251a25 25 0 0 1 25 25v49L309 243V107H145a25 25 0 0 0-25 25z" fill="#FFFFFF"/>
+  <path d="M309 243h87L309 156z" fill="#10A37F"/>
+  <rect x="156" y="192" width="100" height="26" rx="13" fill="#0B6E55"/>
+  <rect x="156" y="243" width="159" height="22" rx="11" fill="#10A37F"/>
+  <rect x="156" y="284" width="139" height="22" rx="11" fill="#10A37F"/>
+  <rect x="156" y="325" width="69" height="22" rx="11" fill="#10A37F"/>
+</svg>

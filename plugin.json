@@ -2,11 +2,14 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "frontend-skill-builder",
   "version": "0.2.0",
-  "description": "Create, improve, and update production-ready SKILL.md files for frontend development technologies.",
+  "description": "Authors structured SKILL.md files for frontend technologies, then checks the result against a fixed section contract.",
   "author": {
-    "name": "Your Name",
-    "email": "you@example.com"
+    "name": "SadiqKhan-Dev",
+    "email": "saiqkhan7777@gmail.com",
+    "url": "https://github.com/SadiqKhan-Dev"
   },
+  "homepage": "https://github.com/SadiqKhan-Dev/chatgpt-frontend-skill-plugin",
+  "repository": "https://github.com/SadiqKhan-Dev/chatgpt-frontend-skill-plugin",
   "license": "UNLICENSED",
   "keywords": [
     "frontend",
@@ -22,21 +25,23 @@
     "com.openai": {
       "interface": {
         "displayName": "Frontend Skill Builder",
-        "shortDescription": "Author production-ready frontend SKILL.md files",
-        "longDescription": "Generates and maintains reusable SKILL.md files for frontend technologies such as React, Next.js, TypeScript, Tailwind CSS, and more. Produces structured, production-oriented skills that follow the Agent Skills open specification, validates required fields and technology names, and preserves existing content when improving a skill. Ships a local MCP server exposing the output contract, the technology catalog, the template, the validator, and an improvement audit as tools, so the deterministic checks are machine-checked rather than eyeballed.",
-        "developerName": "Your Name",
-        "category": "Productivity",
+        "shortDescription": "Write frontend SKILL.md files",
+        "longDescription": "Creates and revises SKILL.md files for frontend work such as React components, Next.js App Router data fetching, TypeScript data modelling, and Tailwind layout. Each skill is planned against a fixed contract of fifteen sections, drafted section by section, and checked with a bundled validator that reports missing required sections, unresolved template placeholders, and frontmatter problems. Revising an existing skill preserves the sections you did not ask to change, so an edit stays scoped to the part you named. The validator runs as a script from the plugin bundle, so the checks do not depend on a connected tool server.",
+        "developerName": "SadiqKhan-Dev",
+        "websiteURL": "https://github.com/SadiqKhan-Dev/chatgpt-frontend-skill-plugin",
+        "category": "Developer Tools",
         "capabilities": [
           "Read",
           "Write"
         ],
-        "brandColor": "#10A37F",
+        "brandColor": "#0B6E55",
+        "brandColorDark": "#10A37F",
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png",
         "defaultPrompt": [
           "Create a beginner skill for building accessible React components.",
-          "Create an advanced Next.js App Router skill.",
-          "Improve my existing SKILL.md for Next.js App Router without rewriting unrelated sections.",
-          "Turn these rough notes about TypeScript generics into a structured SKILL.md.",
-          "Validate this SKILL.md and tell me which required sections are missing."
+          "Improve my existing Next.js App Router SKILL.md without rewriting unrelated sections.",
+          "Validate this SKILL.md and list the required sections that are missing."
         ]
       }
     }

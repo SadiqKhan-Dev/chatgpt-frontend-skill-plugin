@@ -58,7 +58,7 @@ The skill itself needs nothing. The validators use only the Node.js standard lib
 
 ```bash
 npm run setup   # once: installs @modelcontextprotocol/sdk and zod into mcp/
-npm run check   # validates the manifests, the contract, the MCP server, and 119 tests
+npm run check   # validates the manifests, the contract, the MCP server, and 120 tests
 ```
 
 `npm run setup` is only needed for the tools. Without it the skill, the CLI validators, and the
@@ -115,7 +115,7 @@ hosts expect their default component locations.
 │   ├── typescript-strict-data-modeling/
 │   └── tailwind-responsive-layout/
 │
-└── tests/                            119 node:test cases, no dependencies
+└── tests/                            120 node:test cases, no dependencies
     ├── *.test.mjs                    core: frontmatter, contract, technologies, validator, examples
     └── mcp/tools.test.mjs            MCP tools, self-skipping when the SDK is absent
 ```
@@ -222,7 +222,7 @@ npm run setup            # once: install the MCP SDK into mcp/
 npm run validate         # manifests, skill discovery, mcp.json, cross-manifest consistency
 npm run validate:examples# every examples/*/SKILL.md against the output contract
 npm run validate:mcp     # real stdio handshake, then every tool with valid and invalid input
-npm test                 # 119 tests, node:test, no dependencies
+npm test                 # 120 tests, node:test, no dependencies
 npm run check            # all four
 npm run mcp:start        # run the MCP server on stdio for an external client
 ```
@@ -325,7 +325,7 @@ intended.
 | `npm run validate` | Manifests match the published schemas, `mcp.json` is well formed and its paths exist, skill discovery works, names agree across manifests |
 | `npm run validate:examples` | Every bundled example satisfies the output contract |
 | `npm run validate:mcp` | The server completes a real handshake and every tool behaves with valid and invalid input |
-| `npm test` | 119 unit tests across the core and the tools |
+| `npm test` | 120 unit tests across the core and the tools |
 
 `validate:mcp` is not redundant with the unit tests. It catches protocol-level faults that calling a
 handler directly cannot: a tool the SDK refuses to register, a structured result that fails its own
@@ -379,19 +379,41 @@ OpenAI retired custom GPTs in favour of MCP-based plugins, which is the format u
 
 ## Before you publish or share this
 
-It is a private plugin, but three placeholder values need real ones if you submit it anywhere:
+The manifests carry real publisher values (`SadiqKhan-Dev`, `saiqkhan7777@gmail.com`) and a real
+homepage, so nothing is left as a placeholder. Three things still need a decision or a hosting
+decision of your own:
 
-- `author.name` and `author.email` in `plugin.json` and `.claude-plugin/plugin.json`, plus `owner` in
-  `.claude-plugin/marketplace.json`.
-- `category` in `.agents/plugins/marketplace.json` and in `extensions.com.openai.interface`. Both are
-  set to `"Productivity"`, the value used in the official documentation examples. Replace it with
-  whatever your directory taxonomy uses.
+- `license` is `UNLICENSED` and the skill declares `license: Proprietary`, which is consistent for
+  a repository you keep the rights to. Change both if you want an open-source licence, and add a
+  matching `LICENSE` file.
+- `privacyPolicyURL`, `termsOfServiceURL`, and `supportURL` are deliberately absent rather than
+  filled with a placeholder. Publish those three pages before you submit; see
+  [SUBMISSION.md](SUBMISSION.md).
+- The exact archive the portal expects is built by `npm run package`, which leaves the MCP server
+  out on purpose. See the next section.
 
-`license` is `UNLICENSED` and the skill declares `license: Proprietary`, matching a private internal
-plugin. Change both if that is wrong.
+## Submitting to ChatGPT
 
-Publishing publicly additionally requires a stable, publicly reachable HTTPS MCP endpoint. A local
-stdio server is enough for private use and is not enough for public submission.
+Public submission uploads a ZIP to <https://platform.openai.com/plugins>. The portal rejects a
+bundled `stdio` MCP server, because a directory listing has to reach the server over public HTTPS
+and a local process cannot. So the submission is **skills-only**:
+
+```bash
+npm run check      # manifests, contract, MCP handshake, 120 tests
+npm run package    # writes dist/frontend-skill-builder-<version>.zip
+```
+
+`npm run package` copies `plugin.json`, `README.md`, `skills/`, and `assets/` and nothing else,
+then gates the result on every limit OpenAI publishes: the 30-character `shortDescription`, the
+three-prompt `defaultPrompt` cap, the square 48px-or-larger logo, the 1024-character skill
+description, the 5000-entry and 100 MB archive caps, and the path rules. It exits non-zero rather
+than writing a ZIP that would be rejected. The MCP server stays in the repository and keeps working
+for local installs; the skill runs the same checks through `scripts/validate-skill.mjs` when no
+tools are connected.
+
+Work through [SUBMISSION.md](SUBMISSION.md) for the parts the packager cannot do for you: the
+verified developer identity, the three policy URLs, and the account with `api.apps.write` that
+owns the listing.
 
 ## Troubleshooting
 

@@ -108,7 +108,10 @@ leaves the description and every body section as placeholders on purpose. Write
 the prose yourself; a generated draft that validates but teaches nothing is worse
 than an obvious blank, because it does not look wrong.
 
-Full tool reference in [references/mcp-tools.md](references/mcp-tools.md).
+Full tool reference in [references/mcp-tools.md](references/mcp-tools.md). Every step below has a
+CLI equivalent, so check which one you have before planning the work. If the tools are not
+connected, use `scripts/validate-skill.mjs` for the same checks rather than describing the tool
+calls you would have made.
 
 ### Structure is a contract, not a suggestion
 

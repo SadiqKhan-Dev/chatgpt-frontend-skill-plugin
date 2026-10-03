@@ -4,9 +4,10 @@
   "version": "0.2.0",
   "description": "Create, improve, and update production-ready SKILL.md files for frontend development technologies.",
   "author": {
-    "name": "Your Name",
-    "email": "you@example.com"
+    "name": "SadiqKhan-Dev",
+    "email": "saiqkhan7777@gmail.com"
   },
+  "homepage": "https://github.com/SadiqKhan-Dev/chatgpt-frontend-skill-plugin",
   "license": "UNLICENSED",
   "keywords": [
     "frontend",
