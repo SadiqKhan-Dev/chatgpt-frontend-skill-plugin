@@ -1,0 +1,20 @@
+{
+  "name": "frontend-skill-builder-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server exposing the Frontend Skill Builder deterministic core as tools.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./src/server.mjs",
+  "scripts": {
+    "start": "node ./src/server.mjs",
+    "start:http": "FRONTEND_SKILL_BUILDER_HTTP=1 node ./src/server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.0",
+    "zod": "^3.25.76"
+  }
+}

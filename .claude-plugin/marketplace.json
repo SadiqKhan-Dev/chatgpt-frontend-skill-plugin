@@ -1,0 +1,28 @@
+{
+  "name": "frontend-skill-builder-local",
+  "description": "Private local marketplace for the Frontend Skill Builder plugin.",
+  "version": "0.2.0",
+  "owner": {
+    "name": "Your Name",
+    "email": "you@example.com"
+  },
+  "metadata": {
+    "pluginRoot": "./"
+  },
+  "plugins": [
+    {
+      "name": "frontend-skill-builder",
+      "source": ".",
+      "description": "Create, improve, and update production-ready SKILL.md files for frontend development technologies.",
+      "version": "0.2.0",
+      "category": "Developer Tools",
+      "tags": [
+        "frontend",
+        "skills",
+        "agent-skills",
+        "skill-authoring"
+      ],
+      "strict": true
+    }
+  ]
+}

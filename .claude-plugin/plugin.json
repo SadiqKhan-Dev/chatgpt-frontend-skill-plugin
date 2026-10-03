@@ -1,0 +1,21 @@
+{
+  "name": "frontend-skill-builder",
+  "displayName": "Frontend Skill Builder",
+  "version": "0.2.0",
+  "description": "Create, improve, and update production-ready SKILL.md files for frontend development technologies.",
+  "author": {
+    "name": "Your Name",
+    "email": "you@example.com"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "frontend",
+    "skills",
+    "agent-skills",
+    "skill-authoring",
+    "react",
+    "nextjs",
+    "typescript",
+    "tailwind"
+  ]
+}

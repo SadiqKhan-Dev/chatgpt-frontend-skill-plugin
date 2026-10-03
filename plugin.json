@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "frontend-skill-builder",
+  "version": "0.2.0",
+  "description": "Create, improve, and update production-ready SKILL.md files for frontend development technologies.",
+  "author": {
+    "name": "Your Name",
+    "email": "you@example.com"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "frontend",
+    "skills",
+    "agent-skills",
+    "skill-authoring",
+    "react",
+    "nextjs",
+    "typescript",
+    "tailwind"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Frontend Skill Builder",
+        "shortDescription": "Author production-ready frontend SKILL.md files",
+        "longDescription": "Generates and maintains reusable SKILL.md files for frontend technologies such as React, Next.js, TypeScript, Tailwind CSS, and more. Produces structured, production-oriented skills that follow the Agent Skills open specification, validates required fields and technology names, and preserves existing content when improving a skill. Ships a local MCP server exposing the output contract, the technology catalog, the template, the validator, and an improvement audit as tools, so the deterministic checks are machine-checked rather than eyeballed.",
+        "developerName": "Your Name",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "brandColor": "#10A37F",
+        "defaultPrompt": [
+          "Create a beginner skill for building accessible React components.",
+          "Create an advanced Next.js App Router skill.",
+          "Improve my existing SKILL.md for Next.js App Router without rewriting unrelated sections.",
+          "Turn these rough notes about TypeScript generics into a structured SKILL.md.",
+          "Validate this SKILL.md and tell me which required sections are missing."
+        ]
+      }
+    }
+  }
+}
